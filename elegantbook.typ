@@ -188,7 +188,7 @@
   set par(
     justify: true,
     leading: if lang == "cn" { 0.78em } else { 0.65em },
-    first-line-indent: (amount: 2em, all: true),
+    first-line-indent: 2em,
   )
 
   // Heading styles
