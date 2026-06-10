@@ -392,7 +392,7 @@
       let h = counter(heading).get()
       let n = cnt.get().first()
       let num-str = str(h.first()) + "." + str(n)
-      if thm-name != none {
+      if thm-name != none and thm-name != "" and thm-name != [] {
         strong(title-name + " " + num-str) + " (" + thm-name + ")"
       } else {
         strong(title-name + " " + num-str)
@@ -464,7 +464,7 @@
       let ch = counter(heading.where(level: 1)).get().first()
       let n  = _def-cnt.get().first()
       let num-str = str(ch) + "." + str(n)
-      if name != none {
+      if name != none and name != "" and name != [] {
         strong(strings.definition + " " + num-str + " (" + name + ")")
       } else {
         strong(strings.definition + " " + num-str)
@@ -500,7 +500,7 @@
       let ch = counter(heading.where(level: 1)).get().first()
       let n  = _thm-cnt.get().first()
       let num-str = str(ch) + "." + str(n)
-      if name != none {
+      if name != none and name != "" and name != [] {
         strong(strings.theorem + " " + num-str + " (" + name + ")")
       } else {
         strong(strings.theorem + " " + num-str)
@@ -536,7 +536,7 @@
       let ch = counter(heading.where(level: 1)).get().first()
       let n  = _lem-cnt.get().first()
       let num-str = str(ch) + "." + str(n)
-      if name != none {
+      if name != none and name != "" and name != [] {
         strong(strings.lemma + " " + num-str + " (" + name + ")")
       } else {
         strong(strings.lemma + " " + num-str)
@@ -572,7 +572,7 @@
       let ch = counter(heading.where(level: 1)).get().first()
       let n  = _cor-cnt.get().first()
       let num-str = str(ch) + "." + str(n)
-      if name != none {
+      if name != none and name != "" and name != [] {
         strong(strings.corollary + " " + num-str + " (" + name + ")")
       } else {
         strong(strings.corollary + " " + num-str)
@@ -608,7 +608,7 @@
       let ch = counter(heading.where(level: 1)).get().first()
       let n  = _axi-cnt.get().first()
       let num-str = str(ch) + "." + str(n)
-      if name != none {
+      if name != none and name != "" and name != [] {
         strong(strings.axiom + " " + num-str + " (" + name + ")")
       } else {
         strong(strings.axiom + " " + num-str)
@@ -644,7 +644,7 @@
       let ch = counter(heading.where(level: 1)).get().first()
       let n  = _pos-cnt.get().first()
       let num-str = str(ch) + "." + str(n)
-      if name != none {
+      if name != none and name != "" and name != [] {
         strong(strings.postulate + " " + num-str + " (" + name + ")")
       } else {
         strong(strings.postulate + " " + num-str)
@@ -680,7 +680,7 @@
       let ch = counter(heading.where(level: 1)).get().first()
       let n  = _pro-cnt.get().first()
       let num-str = str(ch) + "." + str(n)
-      if name != none {
+      if name != none and name != "" and name != [] {
         strong(strings.proposition + " " + num-str + " (" + name + ")")
       } else {
         strong(strings.proposition + " " + num-str)
@@ -879,7 +879,7 @@
 /// Introduction box at the start of a chapter
 #let introduction(title: none, theme: theme-blue, lang: "en", items) = {
   let color = theme.structure
-  let display-title = if title != none { title } else if lang == "cn" { "内容提要" } else { "Introduction" }
+  let display-title = if title != none and title != "" and title != [] { title } else if lang == "cn" { "内容提要" } else { "Introduction" }
   block(
     width: 100%,
     above: 10pt,
@@ -915,7 +915,7 @@
 /// Problem set at end of chapter
 #let problemset(title: none, theme: theme-blue, lang: "en", items) = {
   let color = theme.structure
-  let display-title = if title != none { title } else if lang == "cn" { "练习" } else { "Exercises" }
+  let display-title = if title != none and title != "" and title != [] { title } else if lang == "cn" { "练习" } else { "Exercises" }
   v(10pt)
   align(center, {
     text(fill: color, size: 16pt, weight: "bold",
